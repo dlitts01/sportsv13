@@ -1,0 +1,311 @@
+/* ===========================
+   PAGE LAYOUT
+=========================== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 1000px;
+    margin: auto;
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    color: #333;
+    padding: 20px;
+}
+
+#wrapper {
+    border: 2px solid #009;
+    background-color: rgba(255,255,255,0.9);
+    padding: 15px 20px;
+    border-radius: 10px;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+header {
+    color: #FFF;
+    background-color: #036;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin: 5px 0 0 0;
+    font-weight: bold;
+}
+
+/* ===========================
+   NAVIGATION
+=========================== */
+nav {
+    text-align: center;
+    padding: 12px;
+    background-color: #CCF;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+nav a {
+    margin: 0 15px;
+    color: #004080;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px 8px;
+    display: inline-block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Highlight active link (used for contact page) */
+nav a:hover,
+nav a.selected {
+    background-color: #004080;
+    color: #FFF;
+}
+
+/* ===========================
+   MAIN CONTENT
+=========================== */
+main {
+    color: #009;
+}
+
+section {
+    background-color: #FFC;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+h2 {
+    color: #036;
+}
+
+/* ===========================
+   CONTACT PAGE TABLE
+=========================== */
+table {
+    border: 4px solid #003399;
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+    background-color: rgba(255,255,255,0.95);
+    padding: 10px;
+}
+
+th {
+    background-color: #036;
+    color: #FFF;
+    font-size: 1.4em;
+    text-align: center;
+    padding: 12px;
+    border-bottom: 3px solid #003399;
+}
+
+td {
+    border: 1px solid #999;
+    padding: 8px 12px;
+    vertical-align: top;
+}
+
+/* Required field styling */
+.required {
+    color: red;
+    font-weight: bold;
+}
+
+/* Table form alignment for field labels */
+td:first-child {
+    text-align: right;
+    width: 40%;
+}
+
+/* ===========================
+   IMAGES
+=========================== */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Newsletter specific image */
+.newsletter-img {
+    max-width: 300px;
+    display: block;
+    margin: 0 auto 15px auto;
+    border-radius: 8px;
+}
+
+/* For sports page images */
+.sports-img {
+    width: 200px;
+    margin: 10px 15px 10px 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+    color: #FFF;
+    background-color: #036;
+    font-size: 12px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* ===========================
+   LIST STYLING
+=========================== */
+ul {
+    margin-left: 20px;
+}
+
+ul.square {
+    list-style-type: square;
+}
+
+ul.circle {
+    list-style-type: circle;
+}
+
+ul.custom {
+    list-style-image: url('images/star.png');
+}
+
+ol {
+    margin-left: 20px;
+}
+
+/* ===========================
+   SPECIAL FORMATTING
+=========================== */
+sub {
+    vertical-align: sub;
+    font-size: 0.8em;
+}
+
+sup {
+    vertical-align: super;
+    font-size: 0.8em;
+}
+
+small {
+    font-size: 0.7em;
+}
+
+span.special-char {
+    color: purple;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+/* ===========================
+   PORTFOLIO GALLERY
+=========================== */
+#portfolio-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+#portfolio-gallery figure {
+  background-color: #ffc;
+  border-radius: 10px;
+  padding: 15px;
+  width: 45%;
+  box-sizing: border-box;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+#portfolio-gallery figure:hover {
+  transform: scale(1.03);
+}
+
+#portfolio-gallery img {
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: auto;
+}
+
+#portfolio-gallery figcaption {
+  font-weight: bold;
+  color: #036;
+  text-align: center;
+}
+
+/* ===========================
+   NEWSLETTER BLOCKQUOTE
+=========================== */
+blockquote {
+    text-align: justify;
+    padding: 10px 15px;
+    background-color: #e0f7fa;
+    border-left: 5px solid #036;
+    margin: 15px 0;
+}
+
+blockquote:first-letter {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+/* ===========================
+   INFOBAR
+=========================== */
+.infobar {
+    background-color: #036;
+    color: #FFF;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* ===========================
+   RESPONSIVE ADJUSTMENTS
+=========================== */
+@media (max-width: 700px) {
+  #portfolio-gallery figure {
+    width: 90%;
+  }
+
+  nav a {
+    display: block;
+    margin: 8px auto;
+    width: 80%;
+  }
+
+  .sports-img {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .newsletter-img {
+    max-width: 100%;
+  }
+
+  /* Contact Table Responsive */
+  table {
+    width: 95%;
+  }
+
+  td:first-child {
+    text-align: left;
+    width: auto;
+  }
+}
+
