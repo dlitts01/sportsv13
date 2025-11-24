@@ -1,107 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="author" content="Drew Bennett-Litts" />
-  <meta name="description" content="Contact Drew Bennett-Litts - reach out via this contact page." />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Drew Bennett-Litts | Contact</title>
-  <link rel="stylesheet" href="yoursitename.css" />
+  <meta charset="utf-8">
+  <meta name="author" content="Drew Bennett-Litts">
+  <meta name="description" content="Contact page for Drew Bennett-Litts’ website. Send a message or ask a question.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact – Drew Bennett-Litts</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="yoursitename.css">
 </head>
 
 <body>
   <div id="wrapper">
+
     <!-- HEADER -->
     <header>
       <h1>Drew Bennett-Litts</h1>
-      <p>Contact Page</p>
+      <p>Contact Me</p>
     </header>
 
     <!-- NAVIGATION -->
     <nav>
-      <a href="index.html">Home</a>
-      <a href="sports.html">Sports Page</a>
-      <a href="resume.html">Resume</a>
-      <a href="transcript.html">Transcript</a>
-      <a href="references.html">References</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="newsletter.html">Newsletter</a>
-      <a href="contact.html" class="selected">Contact</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="sports.html">Sports</a></li>
+        <li><a href="transcript.html">Transcript</a></li>
+        <li><a href="newsletter.html">Newsletter</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
     </nav>
 
     <!-- MAIN CONTENT -->
     <main>
-      <section>
-        <h2>Contact Information Form</h2>
-        <p>Please fill in the form below. Fields marked with a <span class="required">*</span> are required.</p>
+      <h2>Send Me a Message</h2>
+      <p>Fields marked with <span class="required">*</span> are required.</p>
 
-        <!-- CONTACT TABLE -->
+      <!-- CONTACT FORM -->
+      <form name="contactForm" id="contactForm" action="FormProcess.php" method="post">
+
+        <!-- Hidden redirect + subject -->
+        <input type="hidden" name="subject" value="Website Contact Submission">
+        <input type="hidden" name="redirect" value="contactSent.html">
+
         <table>
+
           <tr>
-            <th colspan="2">Contact Drew Bennett-Litts</th>
+            <td style="text-align:right; width:220px;">
+              <label for="FirstName"><span class="required">*</span> First Name</label>
+            </td>
+            <td><input type="text" name="FirstName" id="FirstName" required size="40"></td>
           </tr>
 
           <tr>
-            <td><span class="required">*</span> First Name:</td>
-            <td>future textbox</td>
+            <td style="text-align:right;">
+              <label for="LastName"><span class="required">*</span> Last Name</label>
+            </td>
+            <td><input type="text" name="LastName" id="LastName" required size="40"></td>
           </tr>
 
           <tr>
-            <td><span class="required">*</span> Last Name:</td>
-            <td>future textbox</td>
+            <td style="text-align:right;">
+              <label for="City">City</label>
+            </td>
+            <td><input type="text" name="City" id="City" size="40"></td>
           </tr>
 
           <tr>
-            <td>City:</td>
-            <td>future textbox</td>
+            <td style="text-align:right;">
+              <label for="State">State</label>
+            </td>
+            <td>
+              <select name="State" id="State">
+                <option value="FL" selected>Florida</option>
+                <option value="AL">Alabama</option>
+                <option value="GA">Georgia</option>
+                <option value="NY">New York</option>
+                <option value="TX">Texas</option>
+              </select>
+            </td>
           </tr>
 
           <tr>
-            <td>State:</td>
-            <td>Florida (future dropdown)</td>
+            <td style="text-align:right;">
+              <label for="Zip">Zip</label>
+            </td>
+            <td>
+              <input type="text" name="Zip" id="Zip"
+                pattern="[0-9]{5}" title="Five digit zip code" size="10">
+            </td>
           </tr>
 
           <tr>
-            <td>Zip:</td>
-            <td>future textbox</td>
+            <td style="text-align:right;">
+              <label for="Email"><span class="required">*</span> Email</label>
+            </td>
+            <td>
+              <input type="email" name="Email" id="Email" required size="40">
+            </td>
           </tr>
 
           <tr>
-            <td><span class="required">*</span> Email:</td>
-            <td>future textbox</td>
+            <td style="text-align:right;">Gender</td>
+            <td>
+              <input type="radio" name="Gender" id="GenderM" value="M">
+              <label for="GenderM">M</label>
+
+              <input type="radio" name="Gender" id="GenderF" value="F">
+              <label for="GenderF">F</label>
+            </td>
           </tr>
 
           <tr>
-            <td>Telephone:</td>
-            <td>future textbox</td>
+            <td style="text-align:right;">Education</td>
+            <td>
+              <input type="checkbox" name="EduHS" id="EduHS" value="HS">
+              <label for="EduHS">H.S.</label>
+
+              <input type="checkbox" name="EduCollege" id="EduCollege" value="College">
+              <label for="EduCollege">College</label>
+            </td>
           </tr>
 
           <tr>
-            <td>Gender:</td>
-            <td>M F (future radio buttons)</td>
+            <td style="text-align:right; vertical-align:top;">
+              <label for="Comments"><span class="required">*</span> Comments</label>
+            </td>
+            <td>
+              <textarea name="Comments" id="Comments" cols="40" rows="5" required placeholder="Enter your message here"></textarea>
+            </td>
           </tr>
 
           <tr>
-            <td>Education:</td>
-            <td>AS BS (future radio buttons)</td>
+            <td></td>
+            <td>
+              <input type="reset" value="Reset">
+              <input type="submit" value="Submit">
+            </td>
           </tr>
 
-          <tr>
-            <td>Comments:</td>
-            <td>future comment box</td>
-          </tr>
-
-          <tr>
-            <td colspan="2" style="text-align:center;">future submit/reset buttons</td>
-          </tr>
         </table>
-      </section>
+
+      </form>
     </main>
 
     <!-- FOOTER -->
     <footer>
-      <p>&copy; 2025 Drew Bennett-Litts. All rights reserved.</p>
+      <p>&copy; 2025 Drew Bennett-Litts</p>
     </footer>
-  </div> <!-- end wrapper -->
+
+  </div> <!-- close wrapper -->
 </body>
 </html>
